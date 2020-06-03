@@ -251,7 +251,7 @@ const lvl1 = {
             game.removeChild(game.lastChild);
         }
         var header = document.createElement('h1');
-        header.appendChild(document.createTextNode('Level 1 - Scale Up'));
+        header.appendChild(document.createTextNode('Level 1 - Scale Down'));
         game.appendChild(header);
         var text = document.createElement('p');
         text.appendChild(document.createTextNode('Woah! I can see my house from here! We should head back down the scale.'))
@@ -288,6 +288,7 @@ const lvl1 = {
                     document.removeEventListener('keypress', doclistener);
                     var button = document.createElement('button');
                     button.innerText = 'Continue';
+                    button.addEventListener('click', lvl1.gauntletintro);
                     game.appendChild(button);
                     if(correct==answers.length) hundred();
                     document.removeEventListener('keypress', doclistener);
