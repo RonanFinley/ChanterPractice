@@ -1,0 +1,112 @@
+<html>
+    <head>
+        <title>Chanter Practice</title>
+        <style>
+            .note {
+                display:inline;
+                height:100px;
+                margin:0;
+                padding:0;
+                z-index: 1;
+            }
+            .active {
+                outline:1px solid black;
+            }
+            .wrong {
+                background-color:#ff000075;
+            }
+            .right {
+                background-color:#00ff1575;
+            }
+            .music {
+                overflow-x:scroll
+            }
+            #game {
+                display:flex;
+            }
+            p {
+                font-size:24px;
+            }
+            button {
+                font-size: 32px;
+                border:1px solid black;
+                border-radius:5px;
+                background-color:white;
+                transition: box-shadow 0.3s;
+            }
+            button:hover {
+                box-shadow: rgb(133, 133, 133) 0 0 20px;
+                transition: box-shadow 0.3s;
+            }
+            .nav {
+                margin:0;
+                padding:10px;
+            }
+            .nav h2 {
+                padding:0;
+                margin:0;
+            }
+            .nav h4 {
+                padding:0;
+                margin:0;
+            }
+            .unlock {
+                margin-left:20px;
+                display:none;
+            }
+        </style>
+        <script src="bagpipe.js" defer>
+        </script>
+    </head>
+    <body style="min-height: 100vh;margin:0;">
+        <div style="min-height:100vh; width:100vw; position:relative;">
+            <div style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80%;height:80%;">
+                <h1>Chanter Practice</h1>
+                <div id="game">
+                    <div style="width:20%;padding:20px;margin-right:40px;">
+                        <div id="tut" class="nav" onclick='gotoLevel("0")'>
+                            <h2>Tutorial</h2>
+                        </div>
+                        <div id="lvl1" class="nav" onclick='gotoLevel("1")'>
+                            <h2>Level 1</h2>
+                        </div>
+                        <div id="gauntlet1" class="nav unlock" onclick='gotoLevel("1");lvl1.gauntletintro();'>
+                            <h4>Full Scale Gauntlet</h4>
+                        </div>
+                        <div id="lvl2" class="nav" onclick='gotoLevel("2")'>
+                            <h2>Level 2</h2>
+                        </div>
+                        <div id="gauntlet1" class="nav unlock" onclick='gotoLevel("2");lvl2.gauntletIntro();'>
+                            <h4>Gauntlet of Notes</h4>
+                        </div>
+                    </div>
+                    <div style="width:80%;">
+                        <div id="music">
+                            <img src="notes/cleff.svg" class="note">
+                            <span id="notes">
+                                <img src="notes/lg.svg" class="note wrong">
+                                <img src="notes/la.svg" class="note right">
+                                <img src="notes/b.svg" class="note right">
+                                <img src="notes/c.svg" class="note right">
+                                <img src="notes/d.svg" class="note active">
+                                <img src="notes/e.svg" class="note">
+                                <img src="notes/f.svg" class="note">
+                                <img src="notes/hg.svg" class="note">
+                                <img src="notes/ha.svg" class="note">
+                            </span>
+                        </div>
+                        <div class="buttons">
+
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="100" style="height:100vh;width:100vw;display:none;justify-content:center;align-content:center;opacity:0;position:fixed;top:0;left:0;background:rgba(255, 255, 255, 0.8)">
+            <div>
+                <h1 style="font-size:104px;">100%</h1>
+            </div>
+        </div>
+    </body>
+</html>
